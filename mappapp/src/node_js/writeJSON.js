@@ -1,22 +1,24 @@
-const fs = require('fs');
+function writeData(name, lat, long) {
+    const fs = require('fs');
 
-// read JSON file
-const file = require('../data/data.json');
+    // read JSON file
+    const file = require('../data/data.json');
 
-let newData = {
-    "name": "University of Sydney",
-    "latitude": -33.88768206154317,
-    "longitude": 151.18669575105514
-};
+    let newData = {
+        "name": name,
+        "latitude": lat,
+        "longitude": long
+    };
 
-// add new data to file object
-file.push(newData);
+    // add new data to file object
+    file.push(newData);
 
-// write into the file, using 4 for pretty-print
-fs.writeFile("../data/data.json", JSON.stringify(file, null, 4),
-    err => {
-        if (err)
-            throw err;
-        else   
-            console.log("Hehehehe");
-    });
+    // write into the file, using 4 for pretty-print
+    fs.writeFile("../data/data.json", JSON.stringify(file, null, 4),
+        err => {
+            if (err)
+                throw err;
+            else   
+                console.log("Hehehehe");
+        });
+}
