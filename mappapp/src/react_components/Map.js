@@ -4,7 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import './Map.css';
-import data from './data.json';
+import data from '../data/data.json';
 
 let pinIcon = L.icon({
     iconUrl: icon,
